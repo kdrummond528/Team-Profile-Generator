@@ -9,7 +9,6 @@ const DIST_DIR = path.resolve(__dirname, 'dist');
 const distPath = path.join(DIST_DIR, 'team.html');
 
 const render = require('./src/page-template.js');
-const manager = require('./lib/Manager');
 
 const teamMembers = [];
 
@@ -40,12 +39,15 @@ function managerQuestions() {
   ])
     .then((answers) => {
       // use user feedback for manager info
-      const manager = new manager(
+      const manager = new Manager(
         answers.name,
         answers.id,
         answers.email,
         answers.officeNumber
       )
+      console.table(manager)
+      teamMembers.push(manager)
+
         .catch((error) => {
           if (error.isTtyError) {
             // Prompt couldn't be rendered in the current environment
@@ -90,12 +92,16 @@ function engineerQuestions() {
   ])
     .then((answers) => {
       // use user feedback for engineer info
-      const engineer = new engineer(
+      const engineer = new Engineer(
         answers.name,
         answers.id,
         answers.email,
         answers.github
       )
+
+      console.table(engineer)
+      teamMembers.push(engineer)
+
         .catch((error) => {
           if (error.isTtyError) {
             // Prompt couldn't be rendered in the current environment
@@ -137,12 +143,16 @@ function internQuestions() {
   ])
     .then((answers) => {
       // use user feedback for intern info
-      const intern = new intern(
+      const intern = new Intern(
         answers.name,
         answers.id,
         answers.email,
         answers.school
       )
+
+      console.table(intern)
+      teamMembers.push(intern)
+
         .catch((error) => {
           if (error.isTtyError) {
             // Prompt couldn't be rendered in the current environment
@@ -158,8 +168,19 @@ function internQuestions() {
     });
 }
 
+function startApp() {
+  inquirer.prompt(
+    {
+      type: "list",
+      message: "What type of employee would you like to add?",
+      choices: ["Manager", "Engineer", "Intern", "Exit"],
+      name: "employee",
+    }).then((frank) => {
+      console.table(frank)
+    })
+}
 
-
+startApp()
 // STRUCTURING IT
 
 // start with manager function, since every team needs a manager

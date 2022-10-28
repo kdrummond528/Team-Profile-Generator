@@ -4,8 +4,8 @@ const generateTeam = team => {
     const generateManager = manager => {
         return `
         <div class="manager-card">
-            <div class="">
-             <h2 class="cardtitle">${manager.name}</h2>
+            <div class="employee-info">
+             <h2 class="employee-name">${manager.name}</h2>
              <p>${manager.id}</p>
              <p>${manager.email}</p>
              <p>${manager.officeNumber}</p>
@@ -18,7 +18,14 @@ const generateTeam = team => {
     // create the html for engineers
     const generateEngineer = engineer => {
         return `
-
+        <div class="engineer-card">
+            <div class="employee-info">
+                <h2 class="employee-name">${engineer.name}</h2>
+                <p>${engineer.id}</p>
+                <p>${engineer.email}</p>
+                <p>${engineer.github}</p>
+            </div>
+        </div>
         `;
         // push to html
     };
@@ -26,7 +33,14 @@ const generateTeam = team => {
     // create the html for interns
     const generateIntern = intern => {
         return `
-
+        <div class="intern-card">
+            <div class="employee-info">
+                <h2 class="employee-name">${intern.name}</h2>
+                <p>${intern.id}</p>
+                <p>${intern.email}</p>
+                <p>${intern.school}</p>
+        </div>
+    </div>
         `;
         // push to html
     };

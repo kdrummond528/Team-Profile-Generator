@@ -1,27 +1,13 @@
-const employee = require("./employee")
+const Employee = require("./employee")
 
-class manager extends employee {
+class Manager extends Employee {
     constructor(name, id, email, officeNumber) {
-        this.name = name;
-        this.id = id;
-        this.email = email;
+        super(name, id, email)
         this.office = officeNumber;
     }
 
-    getName() {
-        return this.name;
-    }
-
-    getId() {
-        return this.id;
-    }
-
-    getEmail() {
-        return this.email;
-    }
-
-    getOffice() {
-        return this.officeNumber;
+    getOfficeNumber() {
+        return this.office;
     }
 
     getRole() {
@@ -29,4 +15,4 @@ class manager extends employee {
     }
 }
 
-module.exports = manager;
+module.exports = Manager;

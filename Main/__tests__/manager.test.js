@@ -7,7 +7,7 @@ const manager = require("../lib/manager");
 test("Can set officeNumber constructor", () => {
     const testValue = "1234567890"
     const e = new manager("Katie", 5, "test@gmail.com", testValue);
-    expect(e.officeNumber).toBe(testValue);
+    expect(e.office).toBe(testValue);
 });
 
 // test for getters
@@ -23,5 +23,5 @@ test("getRole() should return \"manager\"", () => {
 test("Can get officeNumber via getOffice()", () => {
     const testValue = 1234567890;
     const e = new manager("Katie", 5, "test@gmail.com", testValue);
-    expect(e.getofficeNumber()).toBe(testValue);
+    expect(e.getOfficeNumber()).toBe(testValue);
 });
