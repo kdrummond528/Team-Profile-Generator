@@ -20,6 +20,10 @@ class engineer extends employee {
         return this.email;
     }
 
+    getGithubl() {
+        return this.github;
+    }
+
     getRole() {
         return "Engineer";
     }
