@@ -3,8 +3,16 @@ const generateTeam = team => {
     // create the manager html
     const generateManager = manager => {
         return `
-        
+        <div class="manager-card">
+            <div class="">
+             <h2 class="cardtitle">${manager.name}</h2>
+             <p>${manager.id}</p>
+             <p>${manager.email}</p>
+             <p>${manager.officeNumber}</p>
+            </div>
+        </div>
         `;
+        // push to html
     };
 
     // create the html for engineers
@@ -12,6 +20,7 @@ const generateTeam = team => {
         return `
 
         `;
+        // push to html
     };
 
     // create the html for interns
@@ -19,6 +28,7 @@ const generateTeam = team => {
         return `
 
         `;
+        // push to html
     };
 
     // use the team array to generate pieces of html based on the employee role
