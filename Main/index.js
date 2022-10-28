@@ -16,6 +16,7 @@ function startApp() {
   addEmployee();
 }
 
+// function to add employees
 function addEmployee() {
   inquirer.prompt([
     {
@@ -40,7 +41,7 @@ function addEmployee() {
       name: "email",
     }
   ])
-    .then(function ({ role, name, id, email }) {
+    .then(function ({ role }) {
       if (role === "Manager")
         inquirer.prompt([
           {
@@ -63,11 +64,37 @@ function addEmployee() {
             type: "input",
             message: "What school did/does the employee go to?",
             name: "school",
+          }])
+          .then(inquirer.prompt([{
+            type: "list",
+            message: "Would you like to add another employee?",
+            choices: ["Yes", "No"],
+            name: "new member",
           }
-        ])
-    });
-
+          ]))
+      // teamMembers.push(newMember);
+    })
 }
+
+
+// newMember();
+
+// function newMember() {
+//   inquirer.prompt([
+//     {
+//       type: "list",
+//       message: "Would you like to add another employee?",
+//       choices: ["Yes", "No"],
+//       name: "new member",
+//     }
+//   ]);
+// }
+
+
+
+// add more employees
+// push employees to html
+
 
 // function startApp() {
 //   inquirer
