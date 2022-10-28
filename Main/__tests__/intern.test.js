@@ -22,8 +22,6 @@ test("getRole() should return \"Intern\"", () => {
 // variable for school
 test("Can get school name via getSchool()", () => {
     const testValue = "Full Sail";
-    // variable for new Intern(testValue)
     const e = new Intern("Katie", 5, "test@gmail.com", testValue);
-    //expect using the getter, and then your to be
     expect(e.getSchool()).toBe(testValue);
 });

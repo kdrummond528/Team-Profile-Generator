@@ -23,5 +23,5 @@ test("getRole() should return \"manager\"", () => {
 test("Can get officeNumber via getOffice()", () => {
     const testValue = 1234567890;
     const e = new manager("Katie", 5, "test@gmail.com", testValue);
-    expect(e.officeNumber).toBe(testValue);
+    expect(e.getofficeNumber()).toBe(testValue);
 });

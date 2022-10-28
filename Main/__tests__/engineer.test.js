@@ -7,7 +7,7 @@ const Engineer = require("../lib/engineer");
 test("Can set github constructor", () => {
     const testValue = "GitHub Account User"
     const e = new Engineer("Katie", 5, "test@gmail.com", testValue);
-    expect(e.school).toBe(testValue);
+    expect(e.github).toBe(testValue);
 });
 
 // test for getters
@@ -23,5 +23,5 @@ test("getRole() should return \"Engineer\"", () => {
 test("Can set github constructor", () => {
     const testValue = "GitHub Account"
     const e = new Engineer("Katie", 5, "test@gmail.com", testValue);
-    expect(e.school).toBe(testValue);
+    expect(e.getGithub()).toBe(testValue);
 });
