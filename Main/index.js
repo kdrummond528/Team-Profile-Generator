@@ -166,7 +166,7 @@ function internQuestions() {
 // at the end of manager function, call a createTeam function
 
 // this function would simply ask the user which type of employee they 
-// would like to add, based on their choice, run the correesponding function
+// would like to add, based on their choice, run the corresponding function
 
 // at the end, use fs to write file while sending the team array over to 
 // the function you brought in from page-template.js
