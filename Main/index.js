@@ -14,6 +14,40 @@ const teamMembers = [];
 
 
 // function for creating manager - inquirer questions
+function managerQuestions() {
+  inquirer.prompt([
+    {
+      type: "input",
+      message: "What is your name?",
+      name: "name",
+    },
+    {
+      type: "input",
+      message: "What is your ID number?",
+      name: "id",
+    },
+    {
+      type: "input",
+      message: "What is your email address?",
+      name: "email",
+    },
+    {
+      type: "input",
+      message: "What is your office phone number?",
+      name: "phone",
+    },
+  ])
+    .then((answers) => {
+      // Use user feedback for... whatever!!
+    })
+    .catch((error) => {
+      if (error.isTtyError) {
+        // Prompt couldn't be rendered in the current environment
+      } else {
+        // Something else went wrong
+      }
+    }
+
 // take those questions and create a new Manager with the
 // user provided answers
 // push that new Manager to the team members array
