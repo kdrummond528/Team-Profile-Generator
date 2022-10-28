@@ -5,10 +5,10 @@ const generateTeam = team => {
         return `
         <div class="manager-card">
             <div class="employee-info">
-             <h2 class="employee-name">${manager.name}</h2>
-             <p>${manager.id}</p>
-             <p>${manager.email}</p>
-             <p>${manager.officeNumber}</p>
+            <h2 class="employee-name">${manager.name}</h2>
+            <p>${manager.id}</p>
+            <p>${manager.email}</p>
+            <p>${manager.officeNumber}</p>
             </div>
         </div>
         `;
