@@ -87,7 +87,7 @@ function addEmployee() {
       }])
         .then(function () {
           if (employee.newMembers === "Yes")
-            addEmployee();
+            addEmployee()
           else {
             endHTML();
           }
