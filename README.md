@@ -21,8 +21,8 @@ The following screenshot shows the intended appearance of the application:
 
 ![mockupscreenshot](./instructions/10-object-oriented-programming-homework-demo.png)
 
-## Functionality
-
+## Challenges
+I ran out of time to complete the assignment. I was unable to complete the process of exporting the employee data to an HTML page. I became stuck at the point of ending the inquirer quetions of adding new emplpoyees. In the future I will come back to this repository to make it fully functional. I learned a wide amount of information while working on this assignment, and though it was challenging, I grew a deeper level of comfort working with Javascript, Node, and Inquirer.
 
 ## Link to Repository
 
