@@ -42,39 +42,50 @@ function addEmployee() {
     }
   ])
     .then(function ({ role }) {
-      if (role === "Manager")
-        inquirer.prompt([
+      if (role === "Manager") {
+        return inquirer.prompt([
           {
             type: "input",
             message: "What is the employee's office phone number?",
             name: "phone",
           }
         ]);
-      if (role === "Engineer")
-        inquirer.prompt([
+      }
+      if (role === "Engineer") {
+        return inquirer.prompt([
           {
             type: "input",
             message: "What is the employee's GitHub?",
             name: "github",
           }
         ]);
-      if (role === "Intern")
-        inquirer.prompt([
+      }
+      if (role === "Intern") {
+        return inquirer.prompt([
           {
             type: "input",
             message: "What school did/does the employee go to?",
             name: "school",
-          }])
-          .then(inquirer.prompt([{
-            type: "list",
-            message: "Would you like to add another employee?",
-            choices: ["Yes", "No"],
-            name: "new member",
           }
-          ]))
-      // teamMembers.push(newMember);
+        ]);
+      }
     })
+    .then(function ({ newMember }) {
+      teamMembers.push(newMember);
+
+      inquirer.prompt([{
+        type: "list",
+        message: "Would you like to add another employee?",
+        choices: ["Yes", "No"],
+        name: "newMembers",
+      }])
+
+    })
+
+  console.log(teamMembers);
 }
+
+
 
 
 // newMember();
