@@ -62,7 +62,7 @@ function addEmployee() {
             message: "What is the employee's GitHub?",
             name: "github",
           }
-        ]);
+        ]).then(function ({ github }) { employee.github = github; return employee });
       }
       if (employee.role === "Intern") {
         return inquirer.prompt([
@@ -71,11 +71,11 @@ function addEmployee() {
             message: "What school did/does the employee go to?",
             name: "school",
           }
-        ]);
+        ]).then(function ({ school }) { employee.school = school; return employee });
       }
     })
     .then(function (employee) {
-      console.log(employee);
+      // console.log(employee);
       teamMembers.push(employee);
 
 
@@ -84,19 +84,31 @@ function addEmployee() {
         message: "Would you like to add another employee?",
         choices: ["Yes", "No"],
         name: "newMembers",
-      }]).then(function () {
-        //if yes 
-        return addEmployee();
-
-        //if no
-        return;
-      });
+      }])
+        .then(function () {
+          if (employee.newMembers === "Yes")
+            addEmployee();
+          else {
+            endHTML();
+          }
+          // if no
+          // return;
+        });
 
       console.log(teamMembers);
     })
-
-
 }
 
+// function beginHTML () {
+
+// }
+
+// function populateHTML () {
+
+// }
+
+function endHTML() {
+
+}
 
 startApp();
